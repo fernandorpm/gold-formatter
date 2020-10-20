@@ -37,6 +37,15 @@
 
             clippedGold = clippedGold.Substring(0, clipIndex);
 
+            if (currentGold.Length > 6)
+            {
+                clippedGold += " A" + Convert.ToChar(58 + currentGold.Length);
+            } 
+            else
+            {
+                clippedGold += " K";
+            }
+
         }
 
         Debug.Log(clippedGold);

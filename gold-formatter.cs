@@ -4,7 +4,7 @@
         goldChunk.Clear();
 
 
-        if (currentGold.Length > 4)
+        if (currentGold.Length >= 4)
         {
             for (int i = clippedGold.Length - 1; i >= 0; i -= 3)
             {
@@ -39,8 +39,10 @@
 
             if (currentGold.Length > 6)
             {
-                clippedGold += " A" + Convert.ToChar(58 + currentGold.Length);
-            } 
+                double thousandDivider = 3;
+                int goldLetter = (int)Math.Ceiling(currentGold.Length / thousandDivider);
+                clippedGold += " A" + Convert.ToChar(62 + goldLetter);
+            }
             else
             {
                 clippedGold += " K";
